@@ -1,0 +1,31 @@
+html,
+body,
+object,
+iframe {
+  height: 100%;
+  width: 100%;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+object,
+iframe {
+  border: none;
+}
+
+.fallback-message {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+  background-color: #f0f0f0;
+  padding: 20px;
+}
