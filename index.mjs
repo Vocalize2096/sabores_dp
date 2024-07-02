@@ -14,7 +14,9 @@ const appendPage = (canvas) => {
 };
 
 const renderPage = (page) => {
-  const viewport = page.getViewport({ scale: 1.5 });
+  const isMobile = window.innerWidth <= 768;
+  const scale = isMobile ? 0.5 : 1.5;
+  const viewport = page.getViewport({ scale });
   const canvas = document.createElement("canvas");
   const canvasContext = canvas.getContext("2d");
 
