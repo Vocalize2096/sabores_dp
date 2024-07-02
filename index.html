@@ -12,18 +12,13 @@
 
     <link rel="stylesheet" href="index.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <script src="//mozilla.github.io/pdf.js/build/pdf.mjs" type="module"></script>
+
 </head>
 
 <body>
-    <object data="https://vocalize2096.github.io/sabores_dp/menu.pdf" type="application/pdf" aria-label="PDF Menu">
-        <iframe src="https://vocalize2096.github.io/sabores_dp/menu.pdf">
-            <div class="fallback-message">
-                Este browser não suporta PDFs. <br>
-                Por favor descarregue para poder visualizar:
-                <a href="https://vocalize2096.github.io/sabores_dp/menu.pdf">Descarregar PDF</a>
-            </div>
-        </iframe>
-    </object>
+    <div id="pdfViewer"></div>
+    <script type="module" src="index.mjs"></script>
 </body>
 
 </html>
