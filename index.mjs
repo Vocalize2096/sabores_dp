@@ -4,6 +4,17 @@ const pdfUrl = "https://vocalize2096.github.io/sabores_dp/menu.pdf";
 pdfjsLib.GlobalWorkerOptions.workerSrc =
   "//mozilla.github.io/pdf.js/build/pdf.worker.mjs";
 
+const getScaleFactor = () => {
+  const windowWidth = window.innerWidth;
+  if (windowWidth <= 480) {
+    return 0.6;
+  } else if (windowWidth <= 768) {
+    return 0.8;
+  } else {
+    return 1.5;
+  }
+};
+
 const appendPage = (canvas) => {
   const pageContainer = document.createElement("div");
   const pdfViewer = document.getElementById("pdfViewer");
@@ -14,8 +25,7 @@ const appendPage = (canvas) => {
 };
 
 const renderPage = (page) => {
-  const isMobile = window.innerWidth <= 768;
-  const scale = isMobile ? 0.5 : 1.5;
+  const scale = getScaleFactor();
   const viewport = page.getViewport({ scale });
   const canvas = document.createElement("canvas");
   const canvasContext = canvas.getContext("2d");
